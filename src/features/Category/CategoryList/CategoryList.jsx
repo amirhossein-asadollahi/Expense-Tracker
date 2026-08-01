@@ -5,9 +5,12 @@ import Pagination from "../../../components/Pagination/Pagination";
 import useFetch from "../../../hooks/useFetch";
 import FinanceContext from "../../../Contexts/FinanceContext/FinanceContext";
 import { AVAILABLE_ICONS } from "../../../utils/availableIcons";
+import usePagination from "../../../hooks/usePagination";
 
 const CategoryList = () => {
   const { category } = useContext(FinanceContext);
+  const { currentPage, setCurrentPage, totalPages, paginatedData } =
+    usePagination(category, 5);
   return (
     <>
       <table className="table">
@@ -20,7 +23,7 @@ const CategoryList = () => {
           </tr>
         </thead>
         <tbody>
-          {category?.map((item, index) => {
+          {paginatedData?.map((item, index) => {
             const foundIcon = AVAILABLE_ICONS.find((logo) => {
               return logo.id === item.icon;
             });
@@ -41,7 +44,11 @@ const CategoryList = () => {
       </table>
       <div className="pagination__category">
         <span className="pagination__helper">نمایش 1 تا 8 از 45 تا</span>
-        <Pagination />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </>
   );

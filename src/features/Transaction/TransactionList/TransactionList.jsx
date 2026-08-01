@@ -2,6 +2,7 @@ import Pagination from "../../../components/Pagination/Pagination";
 import FormatTrx from "../../../components/UI/FormatTrx/FormatTrx";
 import FinanceContext from "../../../Contexts/FinanceContext/FinanceContext";
 import useFetch from "../../../hooks/useFetch";
+import usePagination from "../../../hooks/usePagination";
 import useTransaction from "../../../hooks/useTransaction";
 import { convertToPersianDate } from "../../../utils/formatDate";
 import TransactionHeader from "../TransactionHeader/TransactionHeader";
@@ -30,6 +31,8 @@ const TransactionList = () => {
       if (filters.trxType === "") return true;
       return type.trx_type === filters.trxType;
     });
+  const { currentPage, setCurrentPage, totalPages, paginatedData } =
+    usePagination(filteredTransactions, 6);
   return (
     <>
       <TransactionHeader {...filters} setFilters={setFilters} />
@@ -46,7 +49,7 @@ const TransactionList = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredTransactions?.map((item, index) => {
+            {paginatedData?.map((item, index) => {
               const foundCategory = category.find((cat) => {
                 return cat.id === item.category;
               });
@@ -94,7 +97,11 @@ const TransactionList = () => {
         <div className="table__footer">
           <p className="transaction-show-count">نمایش 1 تا 10 از 24</p>
           <div className="table__pagination">
-            <Pagination />
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </div>
         </div>
       </div>

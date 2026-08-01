@@ -1,18 +1,40 @@
-import './Pagination.css'
+import "./Pagination.css";
 
-import React from 'react'
+import React, { useState } from "react";
 
-const Pagination = () => {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
   return (
-    <div className='pagination'>
-        <button className="pagination-btn">قبلی</button>
-        <button className='pagination-item active'>1</button>
-        <button className='pagination-item'>2</button>
-        <button className='pagination-item'>3</button>
-        <button className='pagination-item'>4</button>
-        <button className="pagination-btn">بعدی</button>
+    <div className="pagination">
+      <button
+        className="pagination-btn"
+        onClick={() => {
+          return currentPage !== 1 && onPageChange((prev) => prev - 1);
+        }}
+      >
+        قبلی
+      </button>
+      {pages.map((page) => {
+        return (
+          <button
+            key={page}
+            onClick={() => onPageChange(page)}
+            className={`pagination-item ${currentPage === page ? "active" : null}`}
+          >
+            {page}
+          </button>
+        );
+      })}
+      <button
+        className="pagination-btn"
+        onClick={() => {
+          return currentPage !== totalPages && onPageChange((prev) => prev + 1);
+        }}
+      >
+        بعدی
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;
