@@ -1,0 +1,50 @@
+import "./CategoryList.css";
+import React, { useContext } from "react";
+import CategoryListItem from "./CategoryListItem/CategoryListItem";
+import Pagination from "../../../components/Pagination/Pagination";
+import useFetch from "../../../hooks/useFetch";
+import FinanceContext from "../../../Contexts/FinanceContext/FinanceContext";
+import { AVAILABLE_ICONS } from "../../../utils/availableIcons";
+
+const CategoryList = () => {
+  const { category } = useContext(FinanceContext);
+  return (
+    <>
+      <table className="table">
+        <thead className="table__head">
+          <tr className="table__head-row">
+            <th className="table__head-cell">دسته بندی</th>
+            <th className="table__head-cell">تعداد تراکنش</th>
+            <th className="table__head-cell">مجموع(تومان)</th>
+            <th className="table__head-cell">عملیات</th>
+          </tr>
+        </thead>
+        <tbody>
+          {category?.map((item, index) => {
+            const foundIcon = AVAILABLE_ICONS.find((logo) => {
+              return logo.id === item.icon;
+            });
+            const ICON = <foundIcon.component />;
+            const ICON_COLOR = foundIcon.color;
+            return (
+              <CategoryListItem
+                key={item.id}
+                name={item.name}
+                icon={ICON}
+                created_at={item.created_at}
+                color={ICON_COLOR}
+                categoryId={item.id}
+              />
+            );
+          })}
+        </tbody>
+      </table>
+      <div className="pagination__category">
+        <span className="pagination__helper">نمایش 1 تا 8 از 45 تا</span>
+        <Pagination />
+      </div>
+    </>
+  );
+};
+
+export default CategoryList;

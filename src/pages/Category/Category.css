@@ -1,0 +1,19 @@
+.data__box {
+  margin-top: 12px;
+}
+
+.category__show {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.category__list {
+  flex: 3;
+  box-shadow: 0 4px 12px var(--color-shadow);
+  border-radius: 12px;
+}
+
+.category__add {
+  flex: 1;
+}

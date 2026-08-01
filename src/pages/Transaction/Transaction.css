@@ -1,0 +1,19 @@
+.detail__boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.detail-box{
+    flex: 1;
+}
+
+.transactions{
+    margin-top: 12px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border-card-detail);
+    box-shadow: 0 4px 12px var(--color-shadow);
+    padding: 18px 24px;
+    border-radius: 8px;
+}

@@ -1,0 +1,81 @@
+.modal__screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal__screen-form {
+  width: 500px;
+  max-width: 90%;
+  background: var(--color-bg-page);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.close-x-btn {
+  align-self: flex-end;
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.modal__screen-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-input {
+  width: 100%;
+  padding: 8px 16px;
+  color: var(--color-text-primary);
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--color-border-card-detail);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  background: var(--color-input-bg);
+}
+
+.detail-input:focus {
+  border-color: var(--color-input-focus);
+  box-shadow: 0 0 0 3px var(--color-input-focus-shadow);
+}
+
+.detail-label {
+  color: var(--color-text-secondary);
+}
+
+.action-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.action-transaction {
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--color-border-card-detail);
+  background: var(--color-bg-card);
+  transition: all 0.25s ease;
+}
+
+.action-transaction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cancel {
+  color: var(--color-text-primary);
+}
+
+.submit {
+  color: #fff;
+  background-color: var(--color-btn-primary);
+}

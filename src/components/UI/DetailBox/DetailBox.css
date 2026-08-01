@@ -1,0 +1,41 @@
+.detail__box {
+  background-color: var(--color-bg-card);
+  display: flex;
+  gap: 18px;
+  flex: 1;
+  border: 1px solid var(--color-border-card-detail);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  padding: 18px 24px;
+  border-radius: 8px;
+}
+
+.detail__box-logo {
+  width: 42px;
+  height: 42px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.detail__box-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail__box-title {
+  font-size: 18px;
+  color: var(--color-text-primary);
+}
+
+.detail__box-price {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.detail__box-desc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}

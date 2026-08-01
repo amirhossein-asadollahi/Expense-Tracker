@@ -1,0 +1,25 @@
+body {
+  direction: rtl;
+  background-color: var(--color-bg-page);
+}
+
+.content {
+  width: calc(100% - 240px);
+  margin-right: 240px;
+  padding: 18px;
+}
+
+.content__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+* {
+  font-family: "Vazirmatn", sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}

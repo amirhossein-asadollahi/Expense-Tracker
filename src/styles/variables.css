@@ -1,0 +1,143 @@
+:root {
+  /* ===== Brand / Sidebar ===== */
+  --color-sidebar-bg: #0f1b3d; /* dark navy sidebar background */
+  --color-sidebar-active: #2563eb; /* active nav item (داشبورد) blue highlight */
+  --color-sidebar-text: #cbd5e1; /* inactive sidebar menu text */
+  --color-sidebar-hover-bg: #1a2a52; /* lighter navy, subtle lift from base */
+  --color-sidebar-text-active: #ffffff; /* active/selected sidebar text */
+  --color-sidebar-icon-bg: #1e293b; /* icon badges in sidebar (category icons) */
+
+  /* ===== Page Background ===== */
+  --color-bg-page: #f4f6fb; /* main dashboard background */
+  --color-bg-card: #ffffff; /* white cards/panels */
+  --color-border-card: #334155; /* light card borders/dividers */
+  --color-border-card-detail: #e2e8f0;
+
+  /* ===== Text ===== */
+  --color-text-primary: #1e2433; /* headings, main dark text */
+  --color-text-secondary: #6b7280; /* labels, muted subtext */
+  --color-text-placeholder: #9ca3af; /* input placeholder text */
+  --color-input-bg: #ffffff;
+  --color-input-focus: #2563eb;
+  --color-input-focus-shadow: rgba(37, 99, 235, 0.18);
+
+  /* ===== Semantic: Financial Status ===== */
+  --color-income: #10b981; /* green – income / درآمد values & up arrows */
+  --color-income-bg: #d1fae5; /* light green background for income badges */
+  --color-expense: #ef4444; /* red – expense / هزینه values & down arrows */
+  --color-expense-bg: #fee2e2; /* light red background for expense badges */
+  --color-savings: #8b5cf6; /* purple – پس‌انداز (savings) accent */
+  --color-savings-bg: #ede9fe; /* light purple background */
+  --color-balance: #10b981; /* green – موجودی کل (total balance) icon */
+
+  /* ===== Buttons ===== */
+  --color-btn-income: #10b981; /* ثبت درآمد (add income) button */
+  --color-btn-income-hover: #059669;
+  --color-btn-expense: #ef4444; /* ثبت هزینه (add expense) button */
+  --color-btn-expense-hover: #dc2626;
+  --color-btn-primary: #2563eb; /* primary blue actions */
+
+  /* ===== Chart / Category Colors ===== */
+  --color-chart-food: #3b82f6; /* خوراک و مواد غذایی – blue */
+  --color-chart-transport: #10b981; /* حمل و نقل – green */
+  --color-chart-entertainment: #f59e0b; /* تفریح و سرگرمی – orange/amber */
+  --color-chart-bills: #8b5cf6; /* قبوض و شارژ – purple */
+  --color-chart-other: #9ca3af; /* سایر – gray */
+
+  /* ===== Category Tag Badges (table) ===== */
+  --color-tag-food-bg: #dbeafe;
+  --color-tag-food-text: #2563eb;
+  --color-tag-salary-bg: #d1fae5;
+  --color-tag-salary-text: #059669;
+  --color-tag-bills-bg: #ede9fe;
+  --color-tag-bills-text: #7c3aed;
+  --color-tag-transport-bg: #f3f4f6;
+  --color-tag-transport-text: #4b5563;
+
+  /* ===== Misc ===== */
+  --color-divider: #eef0f4; /* row separators in tables/lists */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* card drop shadow */
+
+  /* ===== Font Family ===== */
+  --fs-title: 24px;
+
+  --fs-heading: 20px;
+
+  --fs-subHeading: 18px;
+
+  --fs-body: 16px;
+
+  --fs-small: 14px;
+
+  --fs-caption: 12px;
+
+  /* ===== Font Face ===== */
+  --fw-regular: 400;
+
+  --fw-medium: 500;
+
+  --fw-semibold: 600;
+
+  --fw-bold: 700;
+}
+
+html.DARK {
+  /* ===== Brand / Sidebar ===== */
+  --color-sidebar-bg: #0a1226; /* deeper navy, recedes further than page bg */
+  --color-sidebar-active: #3b82f6; /* slightly brighter blue for dark contrast */
+  --color-sidebar-text: #94a3b8; /* dimmer than light mode for lower glare */
+  --color-sidebar-hover-bg: #16213f; /* subtle lift, same relationship as light */
+  --color-sidebar-text-active: #ffffff;
+  --color-sidebar-icon-bg: #1e293b; /* kept — already dark-friendly */
+
+  /* ===== Page Background ===== */
+  --color-bg-page: #0d1424; /* dark navy-black, not pure black */
+  --color-bg-card: #151d33; /* elevated surface, distinct from page */
+  --color-border-card: #2a3550; /* muted border, visible but not harsh */
+  --color-border-card-detail: #657291; /* muted border, visible but not harsh */
+
+  /* ===== Text ===== */
+  --color-text-primary: #e8eaf0; /* near-white, not pure white (less eye strain) */
+  --color-text-secondary: #94a3b8; /* same as light mode — works on dark too */
+  --color-text-placeholder: #64748b;
+  --color-input-bg: #1b2540;
+  --color-input-focus: #3b82f6;
+  --color-input-focus-shadow: rgba(59, 130, 246, 0.25);
+
+  /* ===== Semantic: Financial Status ===== */
+  --color-income: #34d399; /* brighter green — pops on dark bg */
+  --color-income-bg: #0f3d2e; /* dark green tint instead of light pastel */
+  --color-expense: #f87171; /* softer red — less harsh than pure #ef4444 on dark */
+  --color-expense-bg: #451a1a;
+  --color-savings: #a78bfa; /* lighter purple for legibility */
+  --color-savings-bg: #2e1f5e;
+  --color-balance: #34d399;
+
+  /* ===== Buttons ===== */
+  --color-btn-income: #10b981; /* keep saturation — buttons can stay vivid */
+  --color-btn-income-hover: #34d399; /* hover gets brighter, not darker, on dark UI */
+  --color-btn-expense: #ef4444;
+  --color-btn-expense-hover: #f87171;
+  --color-btn-primary: #3b82f6;
+
+  /* ===== Chart / Category Colors ===== */
+  --color-chart-food: #60a5fa;
+  --color-chart-transport: #34d399;
+  --color-chart-entertainment: #fbbf24;
+  --color-chart-bills: #a78bfa;
+  --color-chart-other: #6b7280;
+
+  /* ===== Category Tag Badges (table) ===== */
+  --color-tag-food-bg: #1e3a5f;
+  --color-tag-food-text: #60a5fa;
+  --color-tag-salary-bg: #0f3d2e;
+  --color-tag-salary-text: #34d399;
+  --color-tag-bills-bg: #2e1f5e;
+  --color-tag-bills-text: #a78bfa;
+  --color-tag-transport-bg: #262f42;
+  --color-tag-transport-text: #94a3b8;
+
+  /* ===== Misc ===== */
+  --color-divider: #1e2740; /* visible separator on dark bg */
+  --color-shadow: rgba(0, 0, 0, 0.4); /* shadows need more opacity on dark UI */
+}

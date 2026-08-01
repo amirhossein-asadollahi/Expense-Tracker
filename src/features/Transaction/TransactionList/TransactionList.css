@@ -1,0 +1,60 @@
+.table-data {
+  margin-top: 12px;
+  width: 100%;
+  direction: rtl;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  text-align: right; /* 👈 کلید حل مشکل: هدر و دیتا هم‌جهت می‌شوند */
+  padding: 12px 16px; /* پدینگ مناسب برای خوانایی بهتر مطابق با طرح پروژه‌ات */
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  border-top: 1px solid var(--color-border-card-detail);
+}
+
+.table__head-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.table__footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transaction-show-count {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.expense-badge {
+  background-color: var(--color-expense-bg);
+  color: var(--color-expense);
+}
+
+.income-badge {
+  background-color: var(--color-income-bg);
+  color: var(--color-income);
+}

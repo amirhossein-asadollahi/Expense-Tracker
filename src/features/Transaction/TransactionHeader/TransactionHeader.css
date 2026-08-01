@@ -1,0 +1,47 @@
+.table__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table__header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.table__header-search {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-placeholder);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-card-detail);
+  box-shadow: 0 4px 24px var(--color-shadow);
+}
+
+.table__header-select {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-card-detail);
+  box-shadow: 0 4px 24px var(--color-shadow);
+}
+
+.table__header-excel {
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--color-border-card-detail);
+  background-color: var(--color-bg-page);
+  transition: 0.3s;
+  box-shadow: 0 4px 12px var(--color-shadow);
+  color: var(--color-text-primary);
+}
+
+.table__header-excel:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-bg-card);
+  border-color: var(--color-btn-primary);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+}

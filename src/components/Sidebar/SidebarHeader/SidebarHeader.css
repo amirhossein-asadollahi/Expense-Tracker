@@ -1,0 +1,16 @@
+
+.sidebar-head{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.sidebar-logo{
+    color: var(--color-sidebar-active);
+    font-size: 32px;
+}
+
+.sidebar-title{
+    color: var(--color-sidebar-text);
+}
+

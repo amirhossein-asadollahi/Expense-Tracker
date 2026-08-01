@@ -1,0 +1,38 @@
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background-color: var(--color-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table__head {
+  background-color: var(--color-bg-page);
+}
+
+.table__head-row {
+  border-bottom: 1px solid var(--color-border-card-detail);
+}
+
+.table__head-cell {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  text-align: right; /* راست‌چین کردن متن هدر */
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--color-border-card-detail);
+}
+
+.pagination__category{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+}
+
+.pagination__helper{
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}

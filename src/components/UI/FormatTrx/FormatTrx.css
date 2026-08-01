@@ -1,0 +1,7 @@
+.expense-color {
+  color: var(--color-expense);
+}
+
+.income-color {
+  color: var(--color-income);
+}

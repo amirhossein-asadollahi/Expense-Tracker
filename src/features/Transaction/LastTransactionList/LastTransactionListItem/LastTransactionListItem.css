@@ -1,0 +1,42 @@
+.transaction__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 18px;
+    border-top: 1px solid var(--color-border-card-detail);
+    margin-top: 8px;
+}
+
+.transaction__item-head{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.transaction__item-icon{
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    color: var(--color-sidebar-text-active);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.transaction__item-title{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.transaction__item-category{
+    color: var(--color-sidebar-text-active);
+    padding: 2px 8px;
+    border-radius: 8px;
+}
+
+.transaction__item-price-text{
+    color: var(--color-text-secondary);
+}
+

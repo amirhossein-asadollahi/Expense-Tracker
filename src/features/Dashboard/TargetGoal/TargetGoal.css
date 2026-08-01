@@ -1,0 +1,78 @@
+.target {
+  border: 1px solid var(--color-border-card-detail);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  padding: 18px 24px;
+  border-radius: 8px;
+  background-color: var(--color-bg-card);
+  height: 100%;
+}
+
+.target__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.target__head-title {
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.target__head-link {
+  color: var(--color-chart-food);
+}
+
+.target__goals {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.goal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal__icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 24px;
+  background-color: var(--color-savings-bg);
+  color: var(--color-savings);
+}
+
+.goal__detail {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goal__detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.goal__detail-target {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.goal__detail-progress {
+  width: 100%;
+}
+
+.goal__detail-precent {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-align: end;
+}
