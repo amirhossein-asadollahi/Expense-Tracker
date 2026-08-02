@@ -12,7 +12,7 @@ import React, { useContext } from "react";
 import formatCurrency from "../../../utils/formatCurrency.js";
 
 const ExpensePieChart = () => {
-  const detailBoxes = useDetailBoxes(2);
+  const detailBoxes = useDetailBoxes(2, 3);
   //this function writed by AI
   const renderCustomizedLabel = ({
     cx,
