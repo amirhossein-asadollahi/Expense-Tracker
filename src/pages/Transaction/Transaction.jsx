@@ -17,7 +17,7 @@ import useDetailBoxes from "../../hooks/useDetailBoxes";
 
 const Transaction = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const detailBoxes = useDetailBoxes(1);
+  const detailBoxes = useDetailBoxes(1, 3);
   return (
     <div className="container">
       <div className="content__header">
@@ -36,7 +36,7 @@ const Transaction = () => {
               key={box.id}
               icon={<ICON />}
               title={box.title}
-              value={<FormatTrx value={box.price} />}
+              value={box.price}
               desc={box.desc}
               iconColor={box.iconColor}
             />

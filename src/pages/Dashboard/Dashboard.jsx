@@ -19,7 +19,7 @@ import FormatTrx from "../../components/UI/FormatTrx/FormatTrx.jsx";
 import useDetailBoxes from "../../hooks/useDetailBoxes.jsx";
 
 const Dashboard = () => {
-  const detailBoxes = useDetailBoxes(2);
+  const detailBoxes = useDetailBoxes(2, 3);
   return (
     <>
       <div className="content__header">
@@ -33,7 +33,7 @@ const Dashboard = () => {
               key={box.id}
               icon={<ICON />}
               title={box.title}
-              value={<FormatTrx value={box.price} />}
+              value={box.price}
               desc={box.desc}
               iconColor={box.iconColor}
             />

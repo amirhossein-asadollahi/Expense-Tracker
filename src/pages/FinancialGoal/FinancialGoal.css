@@ -1,0 +1,6 @@
+.detail__boxes-goal {
+  display: flex;
+  gap: 18px;
+  flex: 1;
+  flex-wrap: wrap;
+}

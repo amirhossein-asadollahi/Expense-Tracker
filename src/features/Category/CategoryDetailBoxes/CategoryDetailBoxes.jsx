@@ -5,47 +5,26 @@ import React from "react";
 import FormatTrx from "../../../components/UI/FormatTrx/FormatTrx";
 import useTransaction from "../../../hooks/useTransaction";
 import { TbChecklist } from "react-icons/tb";
+import useDetailBoxes from "../../../hooks/useDetailBoxes";
 
 const CategoryDetailBoxes = () => {
-  const { allCategories } = useTransaction();
+  const detailBoxes = useDetailBoxes(1, 2);
   return (
     <div className="detail">
-      <div className="box">
-        <DetailBox
-          icon={<TbChecklist />}
-          title={"تعداد دسته بندی"}
-          value={<FormatTrx value={allCategories} />}
-          desc={"توضیحات"}
-          iconColor={"--color-balance"}
-        />
-      </div>
-      <div className="box">
-        <DetailBox
-          icon={<FaArrowUp />}
-          title={"درآمد"}
-          value={"23000"}
-          desc={"توضیحات"}
-          iconColor={"--color-balance"}
-        />
-      </div>
-      <div className="box">
-        <DetailBox
-          icon={<FaArrowUp />}
-          title={"درآمد"}
-          value={"23000"}
-          desc={"توضیحات"}
-          iconColor={"--color-balance"}
-        />
-      </div>
-      <div className="box">
-        <DetailBox
-          icon={<FaArrowUp />}
-          title={"درآمد"}
-          value={"23000"}
-          desc={"توضیحات"}
-          iconColor={"--color-balance"}
-        />
-      </div>
+      {detailBoxes.map((item) => {
+        const ICON = item.icon;
+        return (
+          <div className="box">
+            <DetailBox
+              icon={<ICON />}
+              title={item.title}
+              value={item.price}
+              desc={item.desc}
+              iconColor={item.iconColor}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 };

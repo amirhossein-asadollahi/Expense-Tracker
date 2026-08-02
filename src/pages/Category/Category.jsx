@@ -6,7 +6,7 @@ import ThemeIcon from "../../components/UI/ThemeIcon/ThemeIcon";
 import CategoryDetailBoxes from "../../features/Category/CategoryDetailBoxes/CategoryDetailBoxes";
 import CategoryList from "../../features/Category/CategoryList/CategoryList";
 import AddCategoryBox from "../../features/Category/AddCategoryBox/AddCategoryBox";
-import useFetch from "../../hooks/useFetch"
+import useFetch from "../../hooks/useFetch";
 
 const Category = () => {
   return (
@@ -22,10 +22,10 @@ const Category = () => {
       </div>
       <div className="category__show">
         <div className="category__list">
-            <CategoryList />
+          <CategoryList />
         </div>
         <div className="category__add">
-            <AddCategoryBox />
+          <AddCategoryBox />
         </div>
       </div>
     </div>

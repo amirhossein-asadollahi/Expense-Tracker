@@ -3,14 +3,16 @@ import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { IoWallet } from "react-icons/io5";
 import FormatTrx from "../components/UI/FormatTrx/FormatTrx";
 import useTransaction from "../hooks/useTransaction";
+import { TbCategory } from "react-icons/tb";
 
-const useDetailBoxes = (detailBoxId) => {
+const useDetailBoxes = (firstBoxId, secondBoxId) => {
   const {
     addUpIncomes,
     addUpExpenses,
     calculateBalance,
     calculateSavingUp,
     allTrxs,
+    allCategories,
   } = useTransaction();
 
   const detailBoxes = [
@@ -32,6 +34,14 @@ const useDetailBoxes = (detailBoxId) => {
     },
     {
       id: 3,
+      icon: TbCategory,
+      title: "تعداد دسته بندی ها",
+      price: allCategories,
+      desc: "کل دسته بندی های شما",
+      iconColor: "--color-chart-food",
+    },
+    {
+      id: 4,
       icon: FaArrowUp,
       title: "کل درآمدها",
       price: addUpIncomes,
@@ -39,7 +49,7 @@ const useDetailBoxes = (detailBoxId) => {
       iconColor: "--color-income",
     },
     {
-      id: 4,
+      id: 5,
       icon: FaArrowDown,
       title: "کل هزینه ها",
       price: addUpExpenses,
@@ -47,7 +57,7 @@ const useDetailBoxes = (detailBoxId) => {
       iconColor: "--color-expense",
     },
     {
-      id: 5,
+      id: 6,
       icon: IoWallet,
       title: "پس انداز",
       price: calculateSavingUp(),
@@ -55,7 +65,9 @@ const useDetailBoxes = (detailBoxId) => {
       iconColor: "--color-savings",
     },
   ];
-  const filteredBoxes = detailBoxes.filter((item) => item.id !== detailBoxId);
+  const filteredBoxes = detailBoxes.filter(
+    (item) => item.id !== firstBoxId && item.id !== secondBoxId,
+  );
   return filteredBoxes;
 };
 
