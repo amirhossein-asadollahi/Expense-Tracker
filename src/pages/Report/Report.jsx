@@ -1,13 +1,18 @@
 import "./Report.css";
 import ContentHeader from "../../components/UI/ContentHeader/ContentHeader";
 import ThemeIcon from "../../components/UI/ThemeIcon/ThemeIcon";
-import React from "react";
+import React, { useState } from "react";
 import useDetailBoxes from "../../hooks/useDetailBoxes";
 import DetailBox from "../../components/UI/DetailBox/DetailBox";
 import FormatTrx from "../../components/UI/FormatTrx/FormatTrx";
+import ExpensePieChart from "../../components/UI/PieChart/ExpensePieChart";
+import ReportLineChart from "../../features/Reports/LineChart/ReportLineChart";
+import usePeriod from "../../hooks/usePeriod";
 
 const Report = () => {
   const detailBoxes = useDetailBoxes(2, 3);
+  const [period, setPeriod] = useState("weekly");
+  const { chartData } = usePeriod(period);
   return (
     <>
       <div className="content__header">
@@ -27,6 +32,20 @@ const Report = () => {
             />
           );
         })}
+      </div>
+      <div className="report__charts">
+        <div className="charts">
+          <ExpensePieChart />
+        </div>
+        <div className="charts">
+          <select value={period} onChange={(e) => setPeriod(e.target.value)}>
+            <option value="daily">امروز</option>
+            <option value="weekly">۷ روز اخیر</option>
+            <option value="monthly">۳۰ روز اخیر</option>
+            <option value="all">همه</option>
+          </select>
+          <ReportLineChart data={chartData} />
+        </div>
       </div>
     </>
   );

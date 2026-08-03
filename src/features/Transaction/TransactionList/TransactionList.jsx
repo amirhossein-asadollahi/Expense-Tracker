@@ -14,6 +14,7 @@ const TransactionList = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { addUpIncomes, addUpExpenses, allTrxs } = useTransaction();
   const { transaction, category } = useContext(FinanceContext);
+  console.log(transaction);
   const [filters, setFilters] = useState({
     search: "",
     categoryName: "all",
