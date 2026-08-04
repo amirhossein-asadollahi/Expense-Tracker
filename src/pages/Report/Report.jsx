@@ -11,7 +11,7 @@ import usePeriod from "../../hooks/usePeriod";
 
 const Report = () => {
   const detailBoxes = useDetailBoxes(2, 3);
-  const [period, setPeriod] = useState("weekly");
+  const [period, setPeriod] = useState("all");
   const { chartData } = usePeriod(period);
   return (
     <>
@@ -38,7 +38,11 @@ const Report = () => {
           <ExpensePieChart />
         </div>
         <div className="charts">
-          <select value={period} onChange={(e) => setPeriod(e.target.value)}>
+          <select
+            className="chart__select"
+            value={period}
+            onChange={(e) => setPeriod(e.target.value)}
+          >
             <option value="daily">امروز</option>
             <option value="weekly">۷ روز اخیر</option>
             <option value="monthly">۳۰ روز اخیر</option>
