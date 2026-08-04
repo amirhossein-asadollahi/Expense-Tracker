@@ -5,6 +5,7 @@ import Loading from "../../components/Loading/Loading.jsx";
 const FinanceProvider = ({ children }) => {
   const [category, setCategory] = useState([]);
   const [transaction, setTransaction] = useState([]);
+  const [goal, setGoal] = useState([]);
   const {
     data: categoryData,
     loading: categoryLoading,
@@ -15,6 +16,11 @@ const FinanceProvider = ({ children }) => {
     loading: transactionLoading,
     error: transactionError,
   } = useFetch("http://127.0.0.1:8000/api/transaction/");
+  const {
+    data: goalData,
+    loading: goalLoading,
+    error: goalError,
+  } = useFetch("http://127.0.0.1:8000/api/financial-goal/");
   useEffect(() => {
     if (categoryData) {
       setCategory(categoryData);
@@ -26,6 +32,12 @@ const FinanceProvider = ({ children }) => {
       setTransaction(transactionData);
     }
   }, [transactionData]);
+
+  useEffect(() => {
+    if (goalData) {
+      setGoal(goalData);
+    }
+  }, [goalData]);
 
   const addCategory = async (newCategory) => {
     try {
@@ -55,6 +67,27 @@ const FinanceProvider = ({ children }) => {
       if (response.ok) {
         const createdTransaction = await response.json();
         setTransaction((prev) => [...prev, createdTransaction]);
+      } else {
+        throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
+      }
+    } catch (err) {
+      console.log(`error: ${err}`);
+    }
+  };
+
+  const addGoal = async (newGoal) => {
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/financial-goal/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newGoal),
+        },
+      );
+      if (response.ok) {
+        const createdGoal = await response.json();
+        setGoal((prev) => [...prev, createdGoal]);
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
@@ -104,7 +137,25 @@ const FinanceProvider = ({ children }) => {
     }
   };
 
-  if (transactionLoading && categoryLoading) {
+  const removeGoal = async (goalId) => {
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/category/${goalId}/`,
+        {
+          method: "DELETE",
+        },
+      );
+      if (response.ok) {
+        setGoal((prev) => prev.filter((cat) => cat.id !== category));
+      } else {
+        throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
+      }
+    } catch (err) {
+      console.log(`error: ${err}`);
+    }
+  };
+
+  if (transactionLoading && categoryLoading && goalLoading) {
     return <Loading />;
   }
   return (
@@ -112,10 +163,13 @@ const FinanceProvider = ({ children }) => {
       value={{
         category,
         transaction,
+        goal,
         addCategory,
         addTransaction,
+        addGoal,
         removeCategory,
         removeTransaction,
+        removeGoal,
       }}
     >
       {children}

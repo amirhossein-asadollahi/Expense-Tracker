@@ -8,6 +8,8 @@ const FormatTrx = ({ value, type }) => {
       <span className="expense-color">{formatValue} - </span>
     ) : type === "i" ? (
       <span className="income-color">{formatValue} + </span>
+    ) : type === "s" ? (
+      <span className="saving-color">{formatValue}</span>
     ) : (
       formatValue
     );

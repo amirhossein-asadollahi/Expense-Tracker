@@ -5,3 +5,7 @@
 .income-color {
   color: var(--color-income);
 }
+
+.saving-color {
+  color: var(--color-savings);
+}

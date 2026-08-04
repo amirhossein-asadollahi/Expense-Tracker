@@ -27,13 +27,13 @@ const CategoryList = () => {
             const foundIcon = AVAILABLE_ICONS.find((logo) => {
               return logo.id === item.icon;
             });
-            const ICON = <foundIcon.component />;
-            const ICON_COLOR = foundIcon.color;
+            const ICON = foundIcon?.component;
+            const ICON_COLOR = foundIcon?.color;
             return (
               <CategoryListItem
                 key={item.id}
                 name={item.name}
-                icon={ICON}
+                icon={<ICON />}
                 created_at={item.created_at}
                 color={ICON_COLOR}
                 categoryId={item.id}

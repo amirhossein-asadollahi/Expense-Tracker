@@ -128,7 +128,12 @@ export const AVAILABLE_ICONS = [
 ];
 
 // تابع فوق‌العاده کاربردی برای رندر داینامیک آیکون در جدول‌ها
-// export const getIconComponent = (iconCode) => {
-//   const iconObj = AVAILABLE_ICONS.find((item) => item.id === iconCode);
-//   return iconObj ? iconObj.component : IoSettings; // اگر پیدا نشد سورس پیش‌فرض
-// };
+export const getIconComponent = (iconCode) => {
+  const iconObj = AVAILABLE_ICONS.find((item) => item.id === iconCode);
+  return iconObj ? iconObj.component : IoSettings; // اگر پیدا نشد سورس پیش‌فرض
+};
+
+export const getIconColor = (iconColor) => {
+  const iconCodeColor = AVAILABLE_ICONS.find((item) => item.id === iconColor);
+  return iconCodeColor ? iconCodeColor.color : "#94a3b8"; // اگر پیدا نشد سورس پیش‌فرض
+};

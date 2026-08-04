@@ -4,6 +4,7 @@ import ThemeIcon from "../../components/UI/ThemeIcon/ThemeIcon";
 import React from "react";
 import useDetailBoxes from "../../hooks/useDetailBoxes";
 import DetailBox from "../../components/UI/DetailBox/DetailBox";
+import GoalList from "../../features/FinancialGoal/GoalList";
 
 const FinancialGoal = () => {
   const detailBoxes = useDetailBoxes(2, 3);
@@ -29,6 +30,9 @@ const FinancialGoal = () => {
             />
           );
         })}
+      </div>
+      <div className="goal__list">
+        <GoalList />
       </div>
     </>
   );

@@ -16,6 +16,7 @@ const CategoryDetailBoxes = () => {
         return (
           <div className="box">
             <DetailBox
+              key={item.id}
               icon={<ICON />}
               title={item.title}
               value={item.price}
