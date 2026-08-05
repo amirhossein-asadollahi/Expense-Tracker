@@ -105,7 +105,7 @@ const FinanceProvider = ({ children }) => {
         },
       );
       if (response.ok) {
-        setCategory((prev) => prev.filter((cat) => cat.id !== category));
+        setCategory((prev) => prev.filter((cat) => cat.id !== categoryId));
         setTransaction((prev) =>
           prev.filter((trx) => trx.category !== category),
         );
@@ -140,13 +140,13 @@ const FinanceProvider = ({ children }) => {
   const removeGoal = async (goalId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/category/${goalId}/`,
+        `http://127.0.0.1:8000/api/financial-goal/${goalId}/`,
         {
           method: "DELETE",
         },
       );
       if (response.ok) {
-        setGoal((prev) => prev.filter((cat) => cat.id !== category));
+        setGoal((prev) => prev.filter((cat) => cat.id !== goalId));
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }

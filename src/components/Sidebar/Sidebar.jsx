@@ -7,9 +7,8 @@ import { GrTransaction } from "react-icons/gr";
 import { TbCategory } from "react-icons/tb";
 import { MdInsertChartOutlined } from "react-icons/md";
 import { PiTargetBold } from "react-icons/pi";
-import SidebarCategory from "./SidebarCategory/SidebarCategory";
 import { NavLink } from "react-router";
-import {navItems} from '../../configs/sidebarItem.config'
+import { navItems } from "../../configs/sidebarItem.config";
 
 const Sidebar = () => {
   return (
@@ -34,7 +33,6 @@ const Sidebar = () => {
           })}
         </ul>
       </div>
-      <SidebarCategory />
     </aside>
   );
 };

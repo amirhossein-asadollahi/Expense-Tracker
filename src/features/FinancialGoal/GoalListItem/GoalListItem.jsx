@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./GoalListItem.css";
 import FinanceContext from "../../../Contexts/FinanceContext/FinanceContext";
-import { IoIosMore } from "react-icons/io";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { MdOutlineModeEdit } from "react-icons/md";
 import FormatTrx from "../../../components/UI/FormatTrx/FormatTrx";
@@ -18,7 +17,7 @@ const GoalListItem = ({
   goalId,
   progress,
 }) => {
-  const { removeCategory } = useContext(FinanceContext);
+  const { removeGoal } = useContext(FinanceContext);
 
   const iconBgColor = `${color}1a`;
   return (
@@ -63,18 +62,15 @@ const GoalListItem = ({
 
       <td className="table__body-cell">
         <div className="category-action">
-          <button className="action-btn" title="ویرایش دسته بندی">
+          <button className="action-btn" title="ویرایش هدف">
             <MdOutlineModeEdit />
           </button>
           <button
             className="action-btn trash"
-            title="حذف دسته بندی"
-            onClick={() => removeCategory(categoryId)}
+            title="حذف هدف"
+            onClick={() => removeGoal(goalId)}
           >
             <FaRegTrashCan />
-          </button>
-          <button className="action-btn" title="جزئیات دسته بندی">
-            <IoIosMore />
           </button>
         </div>
       </td>

@@ -68,6 +68,24 @@ const useTransaction = () => {
     }, 0);
   };
 
+  const expenseAvarage = () => {
+    return Number(addUpExpenses / allExpenses.length).toFixed(0);
+  };
+
+  const mostIncome = () => {
+    const maxIncome = allIcomes.reduce((max, curr) => {
+      return max > curr.amount ? max : curr.amount;
+    }, allIcomes[0]?.amount);
+    return maxIncome;
+  };
+
+  const mostExpense = () => {
+    const maxExpense = allExpenses.reduce((max, curr) => {
+      return max > curr.amount ? max : curr.amount;
+    }, allIcomes[0]?.amount);
+    return maxExpense;
+  };
+
   const calculateBalance = addUpIncomes - addUpExpenses;
   return {
     addUpIncomes,
@@ -77,6 +95,9 @@ const useTransaction = () => {
     categoryInfo,
     calculateBalance,
     calculateSavingUp,
+    expenseAvarage,
+    mostIncome,
+    mostExpense,
   };
 };
 
