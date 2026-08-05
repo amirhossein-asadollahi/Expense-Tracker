@@ -6,6 +6,7 @@
   border-radius: 12px;
   overflow: hidden;
   margin-top: 18px;
+  box-shadow: 0 4px 12px var(--color-shadow);
 }
 
 .table__head {

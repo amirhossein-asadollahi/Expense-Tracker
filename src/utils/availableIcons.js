@@ -134,6 +134,5 @@ export const getIconComponent = (iconCode) => {
 };
 
 export const getIconColor = (iconColor) => {
-  const iconCodeColor = AVAILABLE_ICONS.find((item) => item.id === iconColor);
-  return iconCodeColor ? iconCodeColor.color : "#94a3b8"; // اگر پیدا نشد سورس پیش‌فرض
+  return iconColor ? iconColor : "#94a3b8"; // اگر پیدا نشد سورس پیش‌فرض
 };

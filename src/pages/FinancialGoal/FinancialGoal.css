@@ -4,3 +4,17 @@
   flex: 1;
   flex-wrap: wrap;
 }
+
+.goal__container{
+  display: flex;
+  gap: 12px;
+}
+
+.goal__list {
+  flex: 4;
+}
+
+.add__new-goal--box{
+  flex: 1;
+}
+

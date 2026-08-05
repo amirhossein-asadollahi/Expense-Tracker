@@ -42,10 +42,17 @@ const GoalList = () => {
                 targetAmount={item.target_amount}
                 currentAmount={item.current_amount}
                 targetDate={item.target_date}
-                progress = {<div>
-                  <span style={{color:"var(--color-text-secondary)"}}>{goalPrgoress}%</span>
-                  <ProgressBar progress={goalPrgoress} color={ICON_COLOR} />
-                </div>}
+                progress={
+                  <div>
+                    <span style={{ color: "var(--color-text-secondary)" }}>
+                      {Math.floor(goalPrgoress)}%
+                    </span>
+                    <ProgressBar
+                      progress={Math.floor(goalPrgoress)}
+                      color={ICON_COLOR}
+                    />
+                  </div>
+                }
                 title={item.title}
                 icon={<ICON />}
                 created_at={item.created_at}

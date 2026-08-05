@@ -5,6 +5,7 @@ import React from "react";
 import useDetailBoxes from "../../hooks/useDetailBoxes";
 import DetailBox from "../../components/UI/DetailBox/DetailBox";
 import GoalList from "../../features/FinancialGoal/GoalList";
+import AddNewGoal from "../../features/FinancialGoal/AddNewGoal/AddNewGoal";
 
 const FinancialGoal = () => {
   const detailBoxes = useDetailBoxes(2, 3);
@@ -31,8 +32,13 @@ const FinancialGoal = () => {
           );
         })}
       </div>
-      <div className="goal__list">
-        <GoalList />
+      <div className="goal__container">
+        <div className="goal__list">
+          <GoalList />
+        </div>
+        <div className="add__new-goal--box">
+          <AddNewGoal />
+        </div>
       </div>
     </>
   );
