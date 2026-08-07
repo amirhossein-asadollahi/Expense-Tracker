@@ -35,7 +35,6 @@ const AddNewGoal = () => {
       target_amount: goalTargetAmount,
       current_amount: "0",
       target_date: isoDate,
-      // created_at: new Date().toISOString(),
       icon: iconTitle,
       color: iconColor,
       status: "a",
@@ -98,7 +97,7 @@ const AddNewGoal = () => {
         </div>
         <div className="goal__input-container">
           <label htmlFor="goal-icon" className="input-label">
-            آیکون هدف
+            نوع هدف
           </label>
           <select
             value={iconTitle}

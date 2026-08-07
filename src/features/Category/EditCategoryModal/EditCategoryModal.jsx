@@ -4,7 +4,7 @@ import FinanceContext from "../../../Contexts/FinanceContext/FinanceContext";
 import { AVAILABLE_ICONS } from "../../../utils/availableIcons";
 import { IoMdClose } from "react-icons/io";
 const EditCategoryModal = ({ setIsOpen, categoryId }) => {
-  const { transaction, category, editCategory } = useContext(FinanceContext);
+  const { category, editCategory } = useContext(FinanceContext);
   const foundCategory = category?.find((cat) => cat.id === categoryId);
   const [editName, setEditName] = useState(foundCategory?.name);
   const [editIcon, setEditIcon] = useState(foundCategory?.icon);

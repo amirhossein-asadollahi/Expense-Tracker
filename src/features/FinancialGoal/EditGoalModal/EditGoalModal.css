@@ -1,0 +1,107 @@
+.edit__modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.edit__modal-content {
+  width: 500px;
+  max-width: 90%;
+  background: var(--color-bg-page);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__head-title {
+  color: var(--color-text-primary);
+}
+
+.modal__head-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-secondary);
+  transition: all 0.3s ease;
+}
+
+.modal__head-btn:hover {
+  background-color: var(--color-border-card-detail);
+}
+
+.edit__modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit__modal-form--inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit__modal-form--label {
+  color: var(--color-text-primary);
+}
+
+.edit__modal-input {
+  width: 100%;
+  padding: 8px 16px;
+  color: var(--color-text-primary);
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--color-border-card-detail);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  background: var(--color-input-bg);
+}
+
+.edit__modal-input:focus {
+  border-color: var(--color-input-focus);
+  box-shadow: 0 0 0 3px var(--color-input-focus-shadow);
+}
+
+action-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.action-transaction {
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--color-border-card-detail);
+  background: var(--color-bg-card);
+  transition: all 0.25s ease;
+}
+
+.action-transaction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cancel {
+  color: var(--color-text-primary);
+}
+
+.submit {
+  color: #fff;
+  background-color: var(--color-btn-primary);
+}
