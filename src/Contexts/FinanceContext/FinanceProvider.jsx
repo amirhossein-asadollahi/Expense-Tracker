@@ -155,6 +155,29 @@ const FinanceProvider = ({ children }) => {
     }
   };
 
+  const editTransaction = async (trxId, editedTrx) => {
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/transaction/${trxId}/`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(editedTrx),
+        },
+      );
+      if (response.ok) {
+        const result = await response.json();
+        setTransaction((prev) =>
+          prev.map((trx) => (trx.id === trxId ? result : trx)),
+        );
+      } else {
+        throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
+      }
+    } catch (err) {
+      console.log(`error: ${err}`);
+    }
+  };
+
   if (transactionLoading && categoryLoading && goalLoading) {
     return <Loading />;
   }
@@ -170,6 +193,7 @@ const FinanceProvider = ({ children }) => {
         removeCategory,
         removeTransaction,
         removeGoal,
+        editTransaction,
       }}
     >
       {children}

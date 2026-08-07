@@ -44,9 +44,7 @@ const Transaction = () => {
         })}
       </div>
       <div className="transactions">
-        <div className="transactions__header">
-          <TransactionList />
-        </div>
+        <TransactionList />
       </div>
       <div className="modal">
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} />

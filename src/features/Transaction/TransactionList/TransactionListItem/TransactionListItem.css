@@ -1,12 +1,11 @@
-
-.list__item-buttons{
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.list__item-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.list__item-btn{
-    width: 32px;
+.list__item-btn {
+  width: 32px;
   height: 32px;
   font-size: 24px;
   display: flex;
@@ -19,10 +18,10 @@
   cursor: pointer;
 }
 
-.list__item-btn:hover{
-    background-color: var(--color-bg-card);
+.list__item-btn:hover {
+  background-color: var(--color-bg-card);
 }
 
-.trash{
-    color: var(--color-expense);
+.trash {
+  color: var(--color-expense);
 }

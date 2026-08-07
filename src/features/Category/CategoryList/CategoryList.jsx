@@ -43,7 +43,6 @@ const CategoryList = () => {
         </tbody>
       </table>
       <div className="pagination__category">
-        <span className="pagination__helper">نمایش 1 تا 8 از 45 تا</span>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
