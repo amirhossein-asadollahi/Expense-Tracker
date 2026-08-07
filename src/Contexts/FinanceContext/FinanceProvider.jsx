@@ -178,6 +178,29 @@ const FinanceProvider = ({ children }) => {
     }
   };
 
+  const editCategory = async (categoryId, editedCategory) => {
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/category/${categoryId}/`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(editedCategory),
+        },
+      );
+      if (response.ok) {
+        const result = await response.json();
+        setCategory((prev) =>
+          prev.map((cat) => (cat.id === categoryId ? result : cat)),
+        );
+      } else {
+        throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
+      }
+    } catch (err) {
+      console.log(`error: ${err}`);
+    }
+  };
+
   if (transactionLoading && categoryLoading && goalLoading) {
     return <Loading />;
   }
@@ -194,6 +217,7 @@ const FinanceProvider = ({ children }) => {
         removeTransaction,
         removeGoal,
         editTransaction,
+        editCategory,
       }}
     >
       {children}
