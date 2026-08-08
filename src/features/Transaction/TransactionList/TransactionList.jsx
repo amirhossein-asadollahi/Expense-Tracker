@@ -8,7 +8,7 @@ import { convertToPersianDate } from "../../../utils/formatDate";
 import TransactionHeader from "../TransactionHeader/TransactionHeader";
 import "./TransactionList.css";
 import TransactionListItem from "./TransactionListItem/TransactionListItem";
-import React, { useContext, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 
 const TransactionList = () => {
   const { addUpIncomes, addUpExpenses, allTrxs } = useTransaction();
@@ -20,18 +20,21 @@ const TransactionList = () => {
     categoryName: "all",
     trxType: "",
   });
-  const filteredTransactions = transaction
-    .filter((trx) =>
-      trx.title.toLowerCase().includes(filters.search?.toLowerCase()),
-    )
-    .filter((item) => {
-      if (filters.categoryName === "all") return true;
-      return item.category === Number(filters.categoryName);
-    })
-    .filter((type) => {
-      if (filters.trxType === "") return true;
-      return type.trx_type === filters.trxType;
-    });
+  const filteredTransactions = useMemo(() => {
+    return transaction
+      .filter((trx) =>
+        trx.title.toLowerCase().includes(filters.search?.toLowerCase()),
+      )
+      .filter((item) => {
+        if (filters.categoryName === "all") return true;
+        return item.category === Number(filters.categoryName);
+      })
+      .filter((type) => {
+        if (filters.trxType === "") return true;
+        return type.trx_type === filters.trxType;
+      });
+  }, [transaction, filters]);
+
   const { currentPage, setCurrentPage, totalPages, paginatedData } =
     usePagination(filteredTransactions, 6);
   return (

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  color: var(--color-sidebar-text);
+  color: inherit;
   padding: 8px 12px;
   transition: 0.3s;
   cursor: pointer;
