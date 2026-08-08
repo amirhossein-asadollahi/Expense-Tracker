@@ -107,7 +107,7 @@ const FinanceProvider = ({ children }) => {
       if (response.ok) {
         setCategory((prev) => prev.filter((cat) => cat.id !== categoryId));
         setTransaction((prev) =>
-          prev.filter((trx) => trx.category !== category),
+          prev.filter((trx) => trx.category !== categoryId),
         );
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);

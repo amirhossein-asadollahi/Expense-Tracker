@@ -17,27 +17,16 @@ const EditGoalModal = ({ setIsOpen, goalId }) => {
   const [editTargetDate, setEditTargetDate] = useState(foundGoal?.target_date);
   const [editIcon, setEditIcon] = useState(foundGoal?.icon);
   const editGoalHandler = () => {
-    if (foundGoal.current_amount >= foundGoal.target_amount) {
-      const editFinanceGoal = {
-        title: editTitle,
-        target_amount: editTargetAmount,
-        current_amount: editCurrentAmount,
-        target_date: editTargetDate,
-        icon: editIcon,
-        status: "a",
-      };
-      editGoal(goalId, editFinanceGoal);
-    } else {
-      const editFinanceGoal = {
-        title: editTitle,
-        target_amount: editTargetAmount,
-        current_amount: editCurrentAmount,
-        target_date: editTargetDate,
-        icon: editIcon,
-        status: "c",
-      };
-      editGoal(goalId, editFinanceGoal);
-    }
+    const isComplete = Number(editCurrentAmount) >= Number(editTargetAmount);
+    const editFinanceGoal = {
+      title: editTitle,
+      target_amount: editTargetAmount,
+      current_amount: editCurrentAmount,
+      target_date: editTargetDate,
+      icon: editIcon,
+      status: isComplete ? "c" : "a",
+    };
+    editGoal(goalId, editFinanceGoal);
     setIsOpen(false);
   };
   return (

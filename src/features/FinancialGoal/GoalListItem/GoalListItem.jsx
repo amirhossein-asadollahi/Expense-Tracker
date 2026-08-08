@@ -65,7 +65,11 @@ const GoalListItem = ({
 
         <td className="table__body-cell">
           <div className="category-action">
-            <button className="action-btn" title="ویرایش هدف" onClick={() => setIsGoalOpen(true)}>
+            <button
+              className="action-btn"
+              title="ویرایش هدف"
+              onClick={() => setIsGoalOpen(true)}
+            >
               <MdOutlineModeEdit />
             </button>
             <button

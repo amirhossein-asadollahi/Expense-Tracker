@@ -19,7 +19,7 @@ const LastTransactionList = ({ headTitle }) => {
         </Link>
       </div>
       <div className="transaction__list-item">
-        {transaction
+        {[...transaction]
           .slice(-5)
           .reverse()
           .map((item) => {

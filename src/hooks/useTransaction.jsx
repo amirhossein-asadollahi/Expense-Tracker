@@ -54,7 +54,7 @@ const useTransaction = () => {
         id: categoryId,
       };
     },
-    [transaction, id],
+    [transaction],
   );
 
   const calculateSavingUp = () => {
