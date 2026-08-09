@@ -1,6 +1,6 @@
 # 💰 Expense Tracker
 
-A personal finance management application built with **React**, integrated with a **Django REST API** and **PostgreSQL** database.
+A personal finance management application built with **React**, integrated with a **Django REST API** and **SQLite** database.
 
 The main focus of this project is the frontend implementation using React. The backend API was provided separately and is used by the frontend for data management.
 
@@ -38,7 +38,7 @@ The main focus of this project is the frontend implementation using React. The b
 
 ### Database
 
-- PostgreSQL
+- SQLite
 
 > **Note:** The backend API was provided separately and is used by the React frontend. The primary focus of this project is the frontend implementation.
 
@@ -55,6 +55,7 @@ Expense-Tracker/
 │
 ├── Expense-Tracker-Api/
 │   ├── manage.py
+│   ├── db.sqlite3
 │   ├── requirements.txt
 │   └── ...
 │
@@ -65,6 +66,7 @@ Expense-Tracker/
 - `src/` — React application source code
 - `public/` — Static frontend assets
 - `Expense-Tracker-Api/` — Django REST API
+- `db.sqlite3` — Local SQLite database
 - `package.json` — Frontend dependencies and scripts
 - `requirements.txt` — Backend Python dependencies
 - `README.md` — Project documentation
@@ -82,7 +84,6 @@ Make sure you have the following installed:
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/)
 - Python 3.x
-- PostgreSQL
 
 ---
 
@@ -126,59 +127,29 @@ pip install -r requirements.txt
 
 ---
 
-# 🗄️ PostgreSQL Setup
+# 🗄️ Database
 
-Make sure PostgreSQL is installed and running on your computer.
+This project uses **SQLite** as its database.
 
-Create a PostgreSQL database for the project.
-
-For example:
+The SQLite database file is included in the repository:
 
 ```text
-Database Name: expense_tracker
-Host: localhost
-Port: 5432
+Expense-Tracker-Api/db.sqlite3
 ```
 
-Configure the Django database settings using your local PostgreSQL credentials.
+No separate database installation or configuration is required.
 
-> ⚠️ Do not upload your database password or other sensitive credentials to GitHub.
-
-If the project uses environment variables, create a `.env` file with your local database configuration.
-
-Example:
-
-```env
-DB_NAME=expense_tracker
-DB_USER=postgres
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_PORT=5432
-```
-
----
-
-# 🔄 Database Migration
-
-After configuring PostgreSQL, run:
-
-```bash
-python manage.py makemigrations
-```
-
-Then:
+If necessary, run the migrations:
 
 ```bash
 python manage.py migrate
 ```
 
-This will create the required database tables in PostgreSQL.
-
 ---
 
 # ▶️ Start the Backend
 
-Run the Django development server:
+Start the Django development server:
 
 ```bash
 python manage.py runserver
@@ -263,18 +234,18 @@ Then open the local URL provided by Vite in your browser.
 
 ---
 
-# ⚠️ Important Notes
+## ⚠️ Important Notes
 
-- PostgreSQL must be running before starting the Django backend.
+- No PostgreSQL or other external database is required.
+- The project uses SQLite locally.
 - The Django backend must be running while using the React application.
-- Make sure your PostgreSQL credentials are correctly configured.
-- Do not commit `.env` files or sensitive credentials.
+- The SQLite database is included with the project for local development.
+- Do not delete `db.sqlite3` if you want to keep the included demo data.
 - The project is currently configured for local development.
-- The backend API is included in this repository for local development and integration purposes.
 
 ---
 
-# 🔮 Future Improvements
+## 🔮 Future Improvements
 
 Possible future improvements include:
 
@@ -291,7 +262,7 @@ Possible future improvements include:
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **AmirHossein Asadollahi**
 
