@@ -32,6 +32,7 @@ The main focus of this project is the frontend implementation using React. The b
 - React Icons
 - React-Router
 - React-Datepicker
+- React-Hot-Toast
 
 ### Backend
 
@@ -73,20 +74,34 @@ The main focus of this project is the frontend implementation using React. The b
 ## 📁 Project Structure
 
 ```text
-Expense-Tracker/
-│
+├── .git/
+├── Expense-Tracker-API/
+├── node_modules/
 ├── public/
+│   └── images/
+├── Screenshots/
 ├── src/
-├── package.json
-│
-├── Expense-Tracker-Api/
-│   ├── manage.py
-│   ├── db.sqlite3
-│   ├── requirements.txt
-│   └── ...
-│
+│   ├── assets/
+│   │   └── fonts/
+│   ├── components/
+│   ├── configs/
+│   ├── Contexts/
+│   ├── features/
+│   ├── hooks/
+│   ├── layouts/
+│   ├── pages/
+│   ├── styles/
+│   ├── utils/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── router.jsx
 ├── .gitignore
-└── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
 ```
 
 - `src/` — React application source code
