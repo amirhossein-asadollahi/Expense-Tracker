@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FinanceContext from "./FinanceContext.js";
 import useFetch from "../../hooks/useFetch.jsx";
 import Loading from "../../components/Loading/Loading.jsx";
+import toast from "react-hot-toast";
 const FinanceProvider = ({ children }) => {
   const [category, setCategory] = useState([]);
   const [transaction, setTransaction] = useState([]);
@@ -49,11 +50,12 @@ const FinanceProvider = ({ children }) => {
       if (response.ok) {
         const createdCategory = await response.json();
         setCategory((prev) => [...prev, createdCategory]);
+        toast.success("دسته بندی جدید با موفقیت افزوده شد");
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داد");
     }
   };
 
@@ -67,11 +69,12 @@ const FinanceProvider = ({ children }) => {
       if (response.ok) {
         const createdTransaction = await response.json();
         setTransaction((prev) => [...prev, createdTransaction]);
+        toast.success("تراکنش جدید با موفقیت افزوده شد");
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داد");
     }
   };
 
@@ -88,11 +91,12 @@ const FinanceProvider = ({ children }) => {
       if (response.ok) {
         const createdGoal = await response.json();
         setGoal((prev) => [...prev, createdGoal]);
+        toast.success("هدف جدید با موفقیت افزوده شد");
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داد");
     }
   };
 
@@ -109,11 +113,14 @@ const FinanceProvider = ({ children }) => {
         setTransaction((prev) =>
           prev.filter((trx) => trx.category !== categoryId),
         );
+        toast.success(
+          "دسته بندی مورد نظر همراه با تراکنش های آن با موفقیت حذف شدند",
+        );
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داده است");
     }
   };
 
@@ -129,11 +136,12 @@ const FinanceProvider = ({ children }) => {
         setTransaction((prev) =>
           prev.filter((trx) => trx.id !== transactionId),
         );
+        toast.success("تراکنش مورد نظر با موفقیت حذف شد");
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داده است");
     }
   };
 
@@ -147,11 +155,12 @@ const FinanceProvider = ({ children }) => {
       );
       if (response.ok) {
         setGoal((prev) => prev.filter((cat) => cat.id !== goalId));
+        toast.success("هدف مورد نظر با موفقیت حذف شد");
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داده است");
     }
   };
 
@@ -170,11 +179,14 @@ const FinanceProvider = ({ children }) => {
         setTransaction((prev) =>
           prev.map((trx) => (trx.id === trxId ? result : trx)),
         );
+        toast("با موفقیت ویرایش شد", {
+          icon: "😃",
+        });
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داده است");
     }
   };
 
@@ -193,11 +205,14 @@ const FinanceProvider = ({ children }) => {
         setCategory((prev) =>
           prev.map((cat) => (cat.id === categoryId ? result : cat)),
         );
+        toast("با موفقیت ویرایش شد", {
+          icon: "😃",
+        });
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داده است");
     }
   };
 
@@ -213,20 +228,24 @@ const FinanceProvider = ({ children }) => {
       );
       if (response.ok) {
         const result = await response.json();
-        setGoal((prev) =>
-          prev.map((financeGoal) =>
-            financeGoal.id === goalId ? result : financeGoal,
-          ),
+        setGoal(
+          (prev) =>
+            prev.map((financeGoal) =>
+              financeGoal.id === goalId ? result : financeGoal,
+            ),
+          toast("با موفقیت ویرایش شد", {
+            icon: "😃",
+          }),
         );
       } else {
         throw new Error(`سرور با خطا مواجه شد: ${response.status}`);
       }
     } catch (err) {
-      console.log(`error: ${err}`);
+      toast.error(err.message || "خطایی رخ داده است");
     }
   };
 
-  if (transactionLoading && categoryLoading && goalLoading) {
+  if (transactionLoading || categoryLoading || goalLoading) {
     return <Loading />;
   }
   return (
