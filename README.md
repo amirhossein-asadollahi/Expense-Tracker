@@ -50,23 +50,23 @@ The main focus of this project is the frontend implementation using React. The b
 
 ### Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./Screenshots/dashboard.png)
 
 ### Transactions
 
-![Transactions](./screenshots/transactions.png)
+![Transactions](./Screenshots/transactions.png)
 
 ### Categories
 
-![Transactions](./screenshots/category.png)
+![Transactions](./Screenshots/category.png)
 
 ### Reports
 
-![Reports](./screenshots/report.png)
+![Reports](./Screenshots/report.png)
 
 ### Financial Goals
 
-![Financial Goals](./screenshots/goal.png)
+![Financial Goals](./Screenshots/goal.png)
 
 ---
 
