@@ -30,6 +30,8 @@ The main focus of this project is the frontend implementation using React. The b
 - CSS
 - Recharts
 - React Icons
+- React-Router
+- React-Datepicker
 
 ### Backend
 
@@ -41,6 +43,30 @@ The main focus of this project is the frontend implementation using React. The b
 - SQLite
 
 > **Note:** The backend API was provided separately and is used by the React frontend. The primary focus of this project is the frontend implementation.
+
+---
+
+## 📸 Screenshots
+
+### Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+### Transactions
+
+![Transactions](./screenshots/transactions.png)
+
+### Categories
+
+![Transactions](./screenshots/category.png)
+
+### Reports
+
+![Reports](./screenshots/report.png)
+
+### Financial Goals
+
+![Financial Goals](./screenshots/goal.png)
 
 ---
 
