@@ -39,7 +39,10 @@ const TransactionList = () => {
     usePagination(filteredTransactions, 6);
   return (
     <>
-      <TransactionHeader {...filters} setFilters={setFilters} />
+      <TransactionHeader
+        {...filters}
+        setFilters={setFilters}
+      />
       <table className="table">
         <thead>
           <tr className="table__head">
