@@ -8,6 +8,7 @@ import { FaRegTrashCan } from "react-icons/fa6";
 import { CgDetailsMore } from "react-icons/cg";
 import FinanceContext from "../../../../Contexts/FinanceContext/FinanceContext";
 import EditModal from "../../EditModal/EditModal";
+import { useNavigate } from "react-router";
 
 const TransactionListItem = ({
   typeTag,
@@ -19,9 +20,13 @@ const TransactionListItem = ({
 }) => {
   const { removeTransaction } = useContext(FinanceContext);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
-      <tr>
+      <tr
+        onClick={() => navigate(`/transaction/${trxId}`)}
+        className="transaction-row"
+      >
         <td>{typeTag}</td>
         <td>{categoryTag}</td>
         <td>{desc}</td>

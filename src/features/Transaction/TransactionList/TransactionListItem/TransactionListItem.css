@@ -1,3 +1,13 @@
+.transaction-row {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.transaction-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px var(--color-shadow);
+}
+
 .list__item-buttons {
   display: flex;
   align-items: center;

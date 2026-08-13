@@ -7,6 +7,7 @@ import FinancialGoal from "./pages/FinancialGoal/FinancialGoal";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NotFound from "./pages/NotFound/NotFound";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import TransactionDetail from "./pages/TransactionDetail/TransactionDetail";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: "transaction", element: <Transaction /> },
+      { path: "transaction/:trxId", element: <TransactionDetail /> },
       { path: "category", element: <Category /> },
       { path: "report", element: <Report /> },
       { path: "financialgoal", element: <FinancialGoal /> },

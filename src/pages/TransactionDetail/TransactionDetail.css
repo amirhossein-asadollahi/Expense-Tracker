@@ -1,0 +1,138 @@
+.trx__datail {
+  margin: 0 auto;
+  padding: 10px 24px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-card-detail);
+  border-radius: 8px;
+}
+
+.trx__detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trx__detail-header--title {
+  color: var(--color-text-primary);
+}
+
+.trx_detail-actions {
+  display: flex;
+  gap: 18px;
+}
+
+.action-trx {
+  font-size: 18px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  background-color: var(--color-bg-page);
+  border: none;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-card-detail);
+  color: var(--color-text-primary);
+}
+
+.action-trx:hover {
+  background-color: var(--color-border-card-detail);
+}
+
+.del {
+  background-color: var(--color-expense-bg);
+  color: var(--color-expense);
+}
+
+.trx__type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  margin-top: 32px;
+  border: 1px solid var(--color-border-card-detail);
+  border-radius: 8px;
+}
+
+.trx__type-icon-div {
+  flex: 1;
+}
+
+.trx__type-icon {
+  width: 92px;
+  height: 92px;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.trx__type-amount {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.trx__type-amount--title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.trx__type-amount--value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.trx__type-amount--toman {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.trx__info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.trx__info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border-card-detail);
+}
+
+.trx__info-item--title {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+}
+
+.trx__info-item--value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.redirect__transaction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  font-size: 18px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: var(--color-bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--color-border-card-detail);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.redirect__transaction:hover {
+  background-color: var(--color-border-card-detail);
+}

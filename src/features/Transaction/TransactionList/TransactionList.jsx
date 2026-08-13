@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Pagination from "../../../components/Pagination/Pagination";
 import FormatTrx from "../../../components/UI/FormatTrx/FormatTrx";
 import FinanceContext from "../../../Contexts/FinanceContext/FinanceContext";
